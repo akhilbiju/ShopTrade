@@ -1,30 +1,32 @@
 import React, { useReducer, createContext, useEffect } from 'react';
-import storeReducer from '../reducers/cartReducer';
-import { ADD_ITEM } from '../contants/actions';
+import cartReducer from '../reducers/cartReducer';
+import { ADD_ITEM, REMOVE_ITEM } from '../contants/actions';
 
 const StoreContext = createContext();
-
+const localStorageKey = 'storeData';
 const initialState = {
-  cartItems: [],
+  cartItems: { items: [], totalAmount: 0, savedAmount: 0, totalItems: 0 },
 };
 
 const StoreProvider = (props) => {
-  const [storeState, dispatch] = useReducer(storeReducer, initialState, () => {
-    const persistData = localStorage.getItem('cartItems');
+  const [storeState, dispatch] = useReducer(cartReducer, initialState, () => {
+    const persistData = localStorage.getItem(localStorageKey);
     return persistData ? JSON.parse(persistData) : initialState;
   });
 
   useEffect(() => {
-    localStorage.setItem('cartItems', JSON.stringify(storeState));
+    localStorage.setItem(localStorageKey, JSON.stringify(storeState));
   }, [storeState]);
 
   const actions = {
-    itemAdded: (user) => {
-      if (user) {
-        dispatch({ type: ADD_ITEM, payload: user });
-      }
+    itemAdd: (item) => {
+      dispatch({ type: ADD_ITEM, payload: item });
+    },
+    itemRemove: (item) => {
+      dispatch({ type: REMOVE_ITEM, payload: item });
     },
   };
+
   return (
     <StoreContext.Provider
       value={{
