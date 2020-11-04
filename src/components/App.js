@@ -1,11 +1,11 @@
 import './App.scss';
-import Cart from './cart/cart';
-import { StoreProvider } from '../contexts/todoContext';
+import Header from './header/Header';
+import { StoreProvider } from '../contexts/TodoContext';
 
 function App() {
   return (
     <StoreProvider>
-      <Cart />
+      <Header />
     </StoreProvider>
   );
 }

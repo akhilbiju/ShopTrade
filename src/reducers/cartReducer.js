@@ -1,4 +1,4 @@
-import { ADD_ITEM, REMOVE_ITEM } from '../contants/actions';
+import { ADD_ITEM, REMOVE_ITEM } from '../constants/Actions';
 
 const cartReducer = (state, action) => {
   const currentItem = state.cartItems;
@@ -18,16 +18,16 @@ const cartReducer = (state, action) => {
       const deleteIndex = findItemIndex(
         currentItem.items,
         itemData,
-        optionData
+        optionData,
       );
+      const selectItem = currentItem.items.splice(deleteIndex, 1)[0].optionType;
       return {
         cartItems: {
           ...currentItem,
-          items: currentItem.items.slice(deleteIndex, 1),
+          items: [...currentItem.items],
           totalAmount:
-            currentItem.totalAmount -
-            currentItem.items[deleteIndex].optionType.count * itemData.price,
-          totalItems: currentItem.totalItems - 1,
+            currentItem.totalAmount - selectItem.count * itemData.price,
+          totalItems: currentItem.totalItems - selectItem.count,
         },
       };
     default:
@@ -35,6 +35,12 @@ const cartReducer = (state, action) => {
   }
 };
 
+/**
+ * Add new item to cart
+ * @param {*} currentData - Current cart list
+ * @param {*} itemData  - New item data
+ * @param {*} optionData  - Variant of the new data
+ */
 function addItem(currentData, itemData, optionData) {
   const newData = currentData;
   const itemIndex = findItemIndex(currentData, itemData, optionData);
@@ -46,11 +52,17 @@ function addItem(currentData, itemData, optionData) {
   return [...newData];
 }
 
+/**
+ * Get the index of the item in cart
+ * @param {*} currentData - Current cart list
+ * @param {*} itemData  - New item data
+ * @param {*} optionData  - Variant of the new data
+ */
 function findItemIndex(currentData, itemData, optionData) {
   return currentData.findIndex(
     (itemDetails) =>
       itemDetails.id === itemData.id &&
-      itemDetails.optionType.id === optionData.id
+      itemDetails.optionType.id === optionData.id,
   );
 }
 

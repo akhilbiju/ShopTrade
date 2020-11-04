@@ -1,6 +1,6 @@
 import React, { useReducer, createContext, useEffect } from 'react';
-import cartReducer from '../reducers/cartReducer';
-import { ADD_ITEM, REMOVE_ITEM } from '../contants/actions';
+import cartReducer from '../reducers/CartReducer';
+import { ADD_ITEM, REMOVE_ITEM } from '../constants/Actions';
 
 const StoreContext = createContext();
 const localStorageKey = 'storeData';

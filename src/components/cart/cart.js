@@ -1,6 +1,6 @@
 import React from 'react';
-import { StoreContext } from '../../contexts/todoContext';
-import { productlist } from '../../contants/productList';
+import { StoreContext } from '../../contexts/TodoContext';
+import { productlist } from '../../constants/ProductList';
 
 function Cart() {
   const { storeState, storeActions } = React.useContext(StoreContext);
