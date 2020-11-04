@@ -4,4 +4,12 @@ header {
   background: orange;
   justify-content: space-between;
   align-items: center;
+
+  .logo {
+    img {
+      height: 35px;
+      margin: 10px;
+      border-radius: 5px;
+    }
+  }
 }
