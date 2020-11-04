@@ -1,15 +1,62 @@
 header {
   display: flex;
   height: 50px;
-  background: orange;
+  background: white;
   justify-content: space-between;
   align-items: center;
-
   .logo {
     img {
       height: 35px;
       margin: 10px;
       border-radius: 5px;
+    }
+  }
+  .navlinks {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+    .navItem {
+      font-weight: bold;
+      font-size: 15px;
+      margin: 10px 7px;
+      transition: box-shadow 0.3s ease-in-out;
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0px 1px 0px rgb(249, 58, 31);
+      }
+    }
+  }
+  .controls {
+    position: relative;
+    img {
+      width: 15px;
+      margin: auto 10px;
+      cursor: pointer;
+      user-select: none;
+      &:last-of-type {
+        margin-right: 20px;
+      }
+    }
+    .searchbox-large {
+      border: none;
+      outline: none;
+      width: 200px;
+      font-size: 12px;
+      padding: 5px;
+      padding-right: 30px;
+      box-shadow: 0px 0px 1px 0px black;
+    }
+    .cartcount {
+      display: inline-block;
+      position: absolute;
+      right: 10px;
+      top: -7px;
+      font-size: 10px;
+      width: 15px;
+      text-align: center;
+      border-radius: 50%;
+      background: rgb(249, 58, 31);
     }
   }
 }
