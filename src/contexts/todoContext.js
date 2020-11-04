@@ -5,7 +5,7 @@ import { ADD_ITEM, REMOVE_ITEM } from '../contants/actions';
 const StoreContext = createContext();
 const localStorageKey = 'storeData';
 const initialState = {
-  cartItems: { items: [], totalAmount: 0, savedAmount: 0, totalItems: 0 },
+  cartItems: { items: [], totalAmount: 0, totalItems: 0 },
 };
 
 const StoreProvider = (props) => {
