@@ -29,6 +29,7 @@ header {
   }
   .controls {
     position: relative;
+    display: flex;
     img {
       width: 15px;
       margin: auto 10px;
@@ -51,7 +52,7 @@ header {
       display: inline-block;
       position: absolute;
       right: 10px;
-      top: -7px;
+      top: -6px;
       font-size: 10px;
       width: 15px;
       text-align: center;
