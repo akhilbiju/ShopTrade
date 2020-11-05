@@ -1,5 +1,6 @@
 import './SideNav.scss';
 import Cancel from '../../images/cancel.png';
+import { NAV_LINKS } from '../../constants/App';
 
 function SideNav(props) {
   const { opened, menuevent } = props;
@@ -12,10 +13,11 @@ function SideNav(props) {
         <img src={Cancel} onClick={closeMenu} alt="logo not available"></img>
       </div>
       <nav>
-        <div className="navItem">Shop</div>
-        <div className="navItem">About Us</div>
-        <div className="navItem">Our Stores</div>
-        <div className="navItem">Contact Us</div>
+        {NAV_LINKS.map((route) => (
+          <div key={route.path} className="navItem" onClick={closeMenu}>
+            {route.name}
+          </div>
+        ))}
       </nav>
     </div>
   );

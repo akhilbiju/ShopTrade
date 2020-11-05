@@ -5,6 +5,7 @@ import search from '../../images/search.png';
 import user from '../../images/user.png';
 import cart from '../../images/cart.png';
 import SideNav from '../sidenav/SideNav';
+import { NAV_LINKS } from '../../constants/App';
 
 function Header() {
   const [menuState, setMenuState] = useState(false);
@@ -32,10 +33,11 @@ function Header() {
           <img src={logo} alt="logo not available"></img>
         </div>
         <div className="navlinks">
-          <span className="navItem">Shop</span>
-          <span className="navItem">About Us</span>
-          <span className="navItem">Our Stores</span>
-          <span className="navItem">Contact Us</span>
+          {NAV_LINKS.map((route) => (
+            <span key={route.path} className="navItem">
+              {route.name}
+            </span>
+          ))}
         </div>
         <div className="controls">
           <input className="searchbox-large" style={inputStyle}></input>
