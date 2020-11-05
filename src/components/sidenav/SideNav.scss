@@ -44,11 +44,12 @@
   visibility: visible;
   transform: scale(0);
   transition: transform 0.2s ease-in;
+  transition-delay: 0.1s;
 }
 
 .active {
   visibility: visible;
-  animation: fadeIn 0.5s;
+  animation: fadeIn 0.3s;
 }
 
 @keyframes fadeIn {
