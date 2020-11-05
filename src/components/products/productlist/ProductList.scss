@@ -10,6 +10,9 @@
     cursor: pointer;
     &:hover {
       box-shadow: 0px 0px 1px 0px black;
+      .variant {
+        visibility: visible !important;
+      }
     }
     .footer {
       padding: 10px;
@@ -24,6 +27,37 @@
         text-overflow: ellipsis;
       }
       .price {
+        position: relative;
+        .variant {
+          visibility: hidden;
+          position: absolute;
+          width: calc(100% + 20px);
+          height: 120px;
+          left: -10px;
+          top: -120px;
+          padding: 10px;
+          box-sizing: border-box;
+          background: white;
+          display: flex;
+          flex-direction: column;
+          .variant-list {
+            display: flex;
+            justify-content: space-around;
+            span {
+              border-radius: 50%;
+              border: 1px solid #ab9e9e;
+              width: 35px;
+              height: 35px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-weight: bold;
+              &:hover {
+                border: 1px solid black;
+              }
+            }
+          }
+        }
         .listprice {
           font-weight: bold;
           font-size: 18px;

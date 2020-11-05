@@ -16,3 +16,16 @@ export const NAV_LINKS = [
     path: 'contact',
   },
 ];
+
+export const SIZES = {
+  xs: 38,
+  small: 39,
+  medium: 40,
+  large: 44,
+  xl: 46,
+  US_8: 38,
+  US_9: 39,
+  US_10: 40,
+  US_11: 44,
+  US_13: 46,
+};
