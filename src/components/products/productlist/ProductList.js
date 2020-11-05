@@ -1,4 +1,5 @@
 import { productlist } from '../../../constants/ProductList';
+import LazyImage from '../LazyImage/LazyImage';
 import './ProductList.scss';
 
 function ProductList() {
@@ -7,7 +8,7 @@ function ProductList() {
       {productlist.map((item) => {
         return (
           <div key={item.id} className="card">
-            <img src={item.image_src[0]} alt="not available"></img>
+            <LazyImage src={item.image_src[0]} alt="not available" />
           </div>
         );
       })}
