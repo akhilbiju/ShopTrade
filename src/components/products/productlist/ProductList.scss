@@ -1,0 +1,14 @@
+.productlist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-gap: 20px;
+  justify-content: center;
+  padding: 10px;
+  .card {
+    img {
+      width: 300px;
+      height: 400px;
+      object-fit: cover;
+    }
+  }
+}

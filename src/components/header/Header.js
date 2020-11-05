@@ -26,9 +26,9 @@ function Header() {
       <header>
         <div className="logo">
           <div onClick={openMenu} className="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
+            {[1, 2, 3].map((data) => (
+              <div key={data}></div>
+            ))}
           </div>
           <img src={logo} alt="logo not available"></img>
         </div>
