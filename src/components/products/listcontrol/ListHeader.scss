@@ -1,0 +1,35 @@
+.control-header {
+  padding: 10px;
+  border-bottom: 1px solid #beb6b6;
+  margin: 10px;
+  h2 {
+    margin-top: 0px;
+  }
+  .filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    span {
+      font-weight: bold;
+    }
+    .filterlist {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      & > div {
+        color: #d5d5d5;
+        padding: 5px 10px;
+        border: 1px solid #d5d5d5;
+        border-radius: 19px;
+        margin: 5px;
+        cursor: pointer;
+        &:hover,
+        &.active {
+          color: black;
+          border: 1px solid black;
+        }
+      }
+    }
+  }
+}
