@@ -1,6 +1,6 @@
 import { productlist } from '../../../constants/ProductList';
 import { PRODUCT_SIZES } from '../../../constants/App';
-import LazyImage from '../lazyimage/LazyImage';
+import LazyImage from '../lazimage/LazyImage';
 import './ProductList.scss';
 
 const getDiscount = (item) => {
