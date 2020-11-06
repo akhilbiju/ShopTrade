@@ -79,34 +79,32 @@ function ProductList() {
               <div className="description">{item.name}</div>
               <div className="price">
                 <div className="variant">
-                  {!selectionState[item.id] ? (
-                    <div className="variant-select">
-                      <span
-                        style={{ marginBottom: '10px', fontWeight: 'bold' }}
-                      >
-                        Select Size
-                      </span>
-                      <div className="variant-list">
-                        {item.options.map((variant) => {
-                          return (
-                            <span
-                              onClick={() => addSelection(item, variant)}
-                              key={variant.id}
-                            >
-                              {getSize(variant)}
-                            </span>
-                          );
-                        })}
-                      </div>
+                  <div className={!selectionState[item.id] ? '' : 'hidden'}>
+                    <span style={{ marginBottom: '10px', fontWeight: 'bold' }}>
+                      Select Size
+                    </span>
+                    <div className="variant-list">
+                      {item.options.map((variant) => {
+                        return (
+                          <span
+                            onClick={() => addSelection(item, variant)}
+                            key={variant.id}
+                          >
+                            {getSize(variant)}
+                          </span>
+                        );
+                      })}
                     </div>
-                  ) : (
-                    <button
-                      onClick={() => addToCart(item.id)}
-                      className="addcart"
-                    >
-                      ADD TO CART
-                    </button>
-                  )}
+                  </div>
+                  <button
+                    onClick={() => addToCart(item.id)}
+                    className={
+                      selectionState[item.id] ? 'addcart' : 'addcart hidden'
+                    }
+                  >
+                    ADD TO CART
+                  </button>
+
                   <span style={{ marginTop: '10px', fontSize: '13px' }}>
                     Sizes: XS, S, M, L, XL, XXL
                   </span>
