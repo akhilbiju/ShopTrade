@@ -5,7 +5,12 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px 0px;
     align-items: center;
-
+    .product {
+      padding: 0px 5px;
+      .description {
+        margin-left: 5px;
+      }
+    }
     .delete-button {
       img {
         cursor: pointer;

@@ -8,6 +8,7 @@ header {
   .logo {
     height: 100%;
     display: flex;
+    -webkit-tap-highlight-color: transparent;
     .hamburger {
       margin: auto 10px;
       cursor: pointer;

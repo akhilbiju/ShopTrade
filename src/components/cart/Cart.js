@@ -28,11 +28,13 @@ function Cart() {
                 <LazyImage
                   src={item.image_src[0]}
                   width="100"
-                  height="100"
+                  height="120"
                   alt="preview"
                 />
-                <div>{item.vendor}</div>
-                <div>Size: {getSize(item.optionType)}</div>
+                <div className="description">
+                  <div>{item.vendor}</div>
+                  <div>Size: {getSize(item.optionType)}</div>
+                </div>
               </div>
               <div>{item.optionType.count}</div>
               <div className="delete-button">
