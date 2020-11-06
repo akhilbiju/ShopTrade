@@ -17,7 +17,7 @@ export const NAV_LINKS = [
   },
 ];
 
-export const SIZES = {
+export const PRODUCT_SIZES = {
   xs: 38,
   small: 39,
   medium: 40,

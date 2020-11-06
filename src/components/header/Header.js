@@ -17,15 +17,11 @@ function Header() {
   const handleMenuEvent = (value) => {
     setMenuState(value);
   };
-  const openMenu = () => {
-    setMenuState(true);
-  };
-
   return (
     <>
       <header>
         <div className="logo">
-          <div onClick={openMenu} className="hamburger">
+          <div onClick={() => setMenuState(true)} className="hamburger">
             {[1, 2, 3].map((data) => (
               <div key={data}></div>
             ))}

@@ -1,6 +1,6 @@
 import { productlist } from '../../../constants/ProductList';
-import { SIZES } from '../../../constants/App';
-import LazyImage from '../LazyImage/LazyImage';
+import { PRODUCT_SIZES } from '../../../constants/App';
+import LazyImage from '../lazyimage/LazyImage';
 import './ProductList.scss';
 
 const getDiscount = (item) => {
@@ -12,9 +12,9 @@ const getDiscount = (item) => {
 
 const getSize = (variant) => {
   if (variant.value.startsWith('US')) {
-    return SIZES['US_' + variant.value.split(' ')[1]];
+    return PRODUCT_SIZES['US_' + variant.value.split(' ')[1]];
   }
-  return SIZES[variant.value] || variant.value;
+  return PRODUCT_SIZES[variant.value] || variant.value;
 };
 
 function ProductList() {

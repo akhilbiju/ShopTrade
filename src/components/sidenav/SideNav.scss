@@ -8,6 +8,7 @@
   visibility: hidden;
   display: flex;
   flex-direction: column;
+  z-index: 2;
   .header {
     align-self: flex-end;
     margin: 20px;
