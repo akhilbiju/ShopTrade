@@ -28,7 +28,9 @@ function Header() {
               <div key={data}></div>
             ))}
           </div>
-          <img src={logo} alt="logo not available"></img>
+          <NavLink to="/">
+            <img src={logo} alt="logo not available"></img>
+          </NavLink>
         </div>
         <div className="navlinks">
           {NAV_LINKS.map((route) => (

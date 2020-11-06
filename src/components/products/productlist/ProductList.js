@@ -1,31 +1,9 @@
 import React, { useState } from 'react';
 import { productlist } from '../../../constants/ProductList';
-import { PRODUCT_SIZES } from '../../../constants/App';
 import { StoreContext } from '../../../contexts/TodoContext';
 import LazyImage from '../lazimage/LazyImage';
 import './ProductList.scss';
-
-/**
- * Calculate discount applied
- * @param {*} item - The product item object
- */
-const getDiscount = (item) => {
-  const price = item.price;
-  const max_price = item.compare_at_price;
-  const percent = ((max_price - price) / max_price) * 100;
-  return `(${Math.floor(percent)}% OFF)`;
-};
-
-/**
- * Get the size in numbers
- * @param {*} variant - The variant of the selected item
- */
-const getSize = (variant) => {
-  if (variant.value.startsWith('US')) {
-    return PRODUCT_SIZES['US_' + variant.value.split(' ')[1]];
-  }
-  return PRODUCT_SIZES[variant.value] || variant.value;
-};
+import { getDiscount, getSize } from '../../utils/helper';
 
 function ProductList() {
   const { storeActions } = React.useContext(StoreContext);
@@ -73,7 +51,12 @@ function ProductList() {
             key={item.id}
             className="card"
           >
-            <LazyImage src={item.image_src[0]} alt="not available" />
+            <LazyImage
+              src={item.image_src[0]}
+              width="300"
+              height="400"
+              alt="preview"
+            />
             <div className="footer">
               <div className="name">{item.vendor}</div>
               <div className="description">{item.name}</div>
