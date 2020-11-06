@@ -1,15 +1,16 @@
 import './Header.scss';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import logo from '../../images/logo.png';
 import search from '../../images/search.png';
 import user from '../../images/user.png';
 import cart from '../../images/cart.png';
 import SideNav from '../sidenav/SideNav';
 import { NAV_LINKS } from '../../constants/App';
+import { StoreContext } from '../../contexts/TodoContext';
 
 function Header() {
+  const { storeState } = React.useContext(StoreContext);
   const [menuState, setMenuState] = useState(false);
-  const cartTotal = 1;
   const inputStyle = {
     background: 'url(' + search + ') 95% no-repeat',
     backgroundSize: '15px',
@@ -40,7 +41,9 @@ function Header() {
           <img className="searchIcon" src={search} alt="not available"></img>
           <img src={user} alt="not available"></img>
           <img src={cart} alt="not available"></img>
-          {cartTotal > 0 && <span className="cartcount">{cartTotal}</span>}
+          {storeState.cartItems.totalItems > 0 && (
+            <span className="cartcount">{storeState.cartItems.totalItems}</span>
+          )}
         </div>
       </header>
       <SideNav opened={menuState} menuevent={handleMenuEvent} />
