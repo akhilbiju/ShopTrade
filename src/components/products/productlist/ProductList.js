@@ -10,12 +10,14 @@ function ProductList() {
   const { storeActions } = React.useContext(StoreContext);
   const [selectionState, setSelectionState] = useState({});
   const [productData, setProductData] = useState(productlist);
+  const [filterList, setFilterList] = useState(['all']);
 
   /**
    * Apply filter values to the list
    * @param {*} filter - Filter values
    */
   const filterChange = (filter) => {
+    setFilterList(filter);
     if (filter instanceof Array && filter[0] === 'all') {
       setProductData(productlist);
     } else {
@@ -60,13 +62,17 @@ function ProductList() {
 
   return (
     <>
-      <ListHeader filterChange={filterChange} count={productData.length} />
+      <ListHeader
+        filterChange={filterChange}
+        count={productData.length}
+        filterList={filterList}
+      />
       <div className="productlist">
         {productData.map((item) => {
           return (
             <div
               onMouseLeave={() => removeSelection(item)}
-              key={new Date().getTime() + item.id}
+              key={filterList.join('') + item.id}
               className="card"
             >
               <LazyImage

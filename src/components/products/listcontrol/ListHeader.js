@@ -1,10 +1,10 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 import './ListHeader.scss';
 
-function ListHeader({ filterChange, count }) {
+function ListHeader({ filterChange, count, filterList }) {
   const filterRef = useRef();
-  const [allSelect, setAllSelect] = useState(true);
+  const allSelect = filterList.join('') === 'all';
 
   /**
    * Send the latest filter data to parent component
@@ -19,7 +19,6 @@ function ListHeader({ filterChange, count }) {
           option.classList.remove('active');
         } else {
           option.classList.add('active');
-          setAllSelect(true);
         }
       } else if (selectedOption === option.dataset.filter) {
         if (option.classList.contains('active')) {
@@ -27,10 +26,8 @@ function ListHeader({ filterChange, count }) {
         } else {
           option.classList.add('active');
         }
-        setAllSelect(false);
       } else if (option.dataset.filter === 'all') {
         option.classList.remove('active');
-        setAllSelect(false);
       }
     }
     const opt = options.filter((option) => option.classList.contains('active'));
