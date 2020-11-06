@@ -1,5 +1,6 @@
-import './Header.scss';
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import './Header.scss';
 import logo from '../../images/logo.png';
 import search from '../../images/search.png';
 import user from '../../images/user.png';
@@ -31,19 +32,28 @@ function Header() {
         </div>
         <div className="navlinks">
           {NAV_LINKS.map((route) => (
-            <span key={route.path} className="navItem">
+            <NavLink
+              to={route.path}
+              activeClassName="active"
+              key={route.path}
+              className="navItem"
+            >
               {route.name}
-            </span>
+            </NavLink>
           ))}
         </div>
         <div className="controls">
           <input className="searchbox-large" style={inputStyle}></input>
           <img className="searchIcon" src={search} alt="not available"></img>
           <img src={user} alt="not available"></img>
-          <img src={cart} alt="not available"></img>
-          {storeState.cartItems.totalItems > 0 && (
-            <span className="cartcount">{storeState.cartItems.totalItems}</span>
-          )}
+          <NavLink to="/cart">
+            <img src={cart} alt="not available"></img>
+            {storeState.cartItems.totalItems > 0 && (
+              <span className="cartcount">
+                {storeState.cartItems.totalItems}
+              </span>
+            )}
+          </NavLink>
         </div>
       </header>
       <SideNav opened={menuState} menuevent={handleMenuEvent} />

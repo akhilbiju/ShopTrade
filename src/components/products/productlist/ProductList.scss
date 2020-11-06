@@ -33,9 +33,9 @@
           visibility: hidden;
           position: absolute;
           width: calc(100% + 20px);
-          height: 120px;
+          height: 100px;
           left: -10px;
-          top: -120px;
+          top: -100px;
           padding: 10px;
           box-sizing: border-box;
           background: white;
@@ -57,6 +57,12 @@
                 border: 1px solid black;
               }
             }
+          }
+          .sizelist {
+            margin-top: '10px';
+            font-size: '13px';
+            position: absolute;
+            bottom: 4px;
           }
           .addcart {
             padding: 10px;

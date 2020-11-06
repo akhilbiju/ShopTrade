@@ -104,10 +104,7 @@ function ProductList() {
                   >
                     ADD TO CART
                   </button>
-
-                  <span style={{ marginTop: '10px', fontSize: '13px' }}>
-                    Sizes: XS, S, M, L, XL, XXL
-                  </span>
+                  <span className="sizelist">Sizes: XS, S, M, L, XL, XXL</span>
                 </div>
                 <span className="listprice">${item.price}</span>
                 <span className="maxprice">${item.compare_at_price}</span>

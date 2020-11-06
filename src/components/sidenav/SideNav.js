@@ -1,6 +1,7 @@
 import './SideNav.scss';
 import Cancel from '../../images/cancel.png';
 import { NAV_LINKS } from '../../constants/App';
+import { NavLink } from 'react-router-dom';
 
 function SideNav(props) {
   const { opened, menuevent } = props;
@@ -14,9 +15,15 @@ function SideNav(props) {
       </div>
       <nav>
         {NAV_LINKS.map((route) => (
-          <div key={route.path} className="navItem" onClick={closeMenu}>
+          <NavLink
+            to={route.path}
+            key={route.path}
+            className="navItem"
+            activeClassName="active"
+            onClick={closeMenu}
+          >
             {route.name}
-          </div>
+          </NavLink>
         ))}
       </nav>
     </div>

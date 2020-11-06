@@ -1,19 +1,19 @@
 export const NAV_LINKS = [
   {
     name: 'Shop',
-    path: 'shop',
+    path: '/shop',
   },
   {
     name: 'About Us',
-    path: 'about',
+    path: '/about',
   },
   {
     name: 'Our Stores',
-    path: 'store',
+    path: '/store',
   },
   {
     name: 'Contact Us',
-    path: 'contact',
+    path: '/contact',
   },
 ];
 

@@ -33,9 +33,11 @@ header {
     .navItem {
       font-weight: bold;
       font-size: 18px;
+      text-decoration: none;
       margin: 10px 7px;
       transition: box-shadow 0.3s ease-in-out;
-      &:hover {
+      &:hover,
+      &.active {
         cursor: pointer;
         box-shadow: 0px 3px 0px rgb(249, 58, 31);
       }
@@ -44,13 +46,30 @@ header {
   .controls {
     position: relative;
     display: flex;
+    height: 30px;
     img {
       width: 20px;
       margin: auto 10px;
       cursor: pointer;
       user-select: none;
-      &:last-of-type {
-        margin-right: 20px;
+    }
+    a {
+      margin-right: 20px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      .cartcount {
+        display: inline-block;
+        position: absolute;
+        right: -4px;
+        top: -8px;
+        height: 20px;
+        font-size: 10px;
+        width: 20px;
+        text-align: center;
+        line-height: 20px;
+        border-radius: 50%;
+        background: #f93a1f;
       }
     }
     .searchbox-large {
@@ -62,17 +81,6 @@ header {
       padding: 5px;
       padding-right: 30px;
       box-shadow: 0px 0px 1px 0px black;
-    }
-    .cartcount {
-      display: inline-block;
-      position: absolute;
-      right: 10px;
-      top: -6px;
-      font-size: 10px;
-      width: 15px;
-      text-align: center;
-      border-radius: 50%;
-      background: rgb(249, 58, 31);
     }
     .searchIcon {
       display: none;
