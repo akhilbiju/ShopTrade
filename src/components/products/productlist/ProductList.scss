@@ -41,6 +41,10 @@
           background: white;
           display: flex;
           flex-direction: column;
+          .variant-label {
+            margin-bottom: 10px;
+            font-weight: bold;
+          }
           .variant-list {
             display: flex;
             justify-content: space-around;

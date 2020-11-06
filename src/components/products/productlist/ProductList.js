@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+
 import { productlist } from '../../../constants/ProductList';
 import { StoreContext } from '../../../contexts/StoreContext';
 import LazyImage from '../lazimage/LazyImage';
+import { SIZE_LABEL } from '../../../constants/App';
 import './ProductList.scss';
 import { getDiscount, getSize } from '../../utils/helper';
 import ListHeader from '../listcontrol/ListHeader';
@@ -87,11 +89,7 @@ function ProductList() {
                 <div className="price">
                   <div className="variant">
                     <div className={!selectionState[item.id] ? '' : 'hidden'}>
-                      <span
-                        style={{ marginBottom: '10px', fontWeight: 'bold' }}
-                      >
-                        Select Size
-                      </span>
+                      <span className="variant-label">Select Size</span>
                       <div className="variant-list">
                         {item.options.map((variant) => {
                           return (
@@ -113,9 +111,7 @@ function ProductList() {
                     >
                       ADD TO CART
                     </button>
-                    <span className="sizelist">
-                      Sizes: XS, S, M, L, XL, XXL
-                    </span>
+                    <span className="sizelist">{SIZE_LABEL}</span>
                   </div>
                   <span className="listprice">${item.price}</span>
                   <span className="maxprice">${item.compare_at_price}</span>

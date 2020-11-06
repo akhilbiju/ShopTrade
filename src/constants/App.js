@@ -29,3 +29,5 @@ export const PRODUCT_SIZES = {
   US_11: 44,
   US_13: 46,
 };
+
+export const SIZE_LABEL = 'Sizes: XS, S, M, L, XL, XXL';
