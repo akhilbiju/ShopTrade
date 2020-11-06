@@ -1,9 +1,10 @@
 import { Route, Switch, Redirect } from 'react-router-dom';
+
 import './App.scss';
 import Header from './header/Header';
 import ProductList from './products/productlist/ProductList';
 import Cart from '../components/cart/Cart';
-import { StoreProvider } from '../contexts/TodoContext';
+import { StoreProvider } from '../contexts/StoreContext';
 
 function App() {
   return (

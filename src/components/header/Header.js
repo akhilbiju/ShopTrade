@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+
 import './Header.scss';
 import logo from '../../images/logo.png';
 import search from '../../images/search.png';
@@ -7,7 +8,7 @@ import user from '../../images/user.png';
 import cart from '../../images/cart.png';
 import SideNav from '../sidenav/SideNav';
 import { NAV_LINKS } from '../../constants/App';
-import { StoreContext } from '../../contexts/TodoContext';
+import { StoreContext } from '../../contexts/StoreContext';
 
 function Header() {
   const { storeState } = React.useContext(StoreContext);
@@ -29,7 +30,7 @@ function Header() {
             ))}
           </div>
           <NavLink to="/">
-            <img src={logo} alt="logo not available"></img>
+            <img src={logo} alt="logo"></img>
           </NavLink>
         </div>
         <div className="navlinks">
@@ -46,10 +47,10 @@ function Header() {
         </div>
         <div className="controls">
           <input className="searchbox-large" style={inputStyle}></input>
-          <img className="searchIcon" src={search} alt="not available"></img>
-          <img src={user} alt="not available"></img>
+          <img className="searchIcon" src={search} alt="search"></img>
+          <img src={user} alt="user"></img>
           <NavLink to="/cart">
-            <img src={cart} alt="not available"></img>
+            <img src={cart} alt="cart"></img>
             {storeState.cartItems.totalItems > 0 && (
               <span className="cartcount">
                 {storeState.cartItems.totalItems}

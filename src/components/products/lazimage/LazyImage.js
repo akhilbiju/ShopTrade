@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import './LazyImage.scss';
 import LazyLoad from 'react-lazy-load';
+
+import './LazyImage.scss';
 
 function LazyImage({ src, alt, width, height }) {
   const [loading, setLoading] = useState(true);

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { productlist } from '../../../constants/ProductList';
-import { StoreContext } from '../../../contexts/TodoContext';
+import { StoreContext } from '../../../contexts/StoreContext';
 import LazyImage from '../lazimage/LazyImage';
 import './ProductList.scss';
 import { getDiscount, getSize } from '../../utils/helper';

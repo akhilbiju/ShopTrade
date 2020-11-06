@@ -1,6 +1,7 @@
 import React from 'react';
+
 import './Cart.scss';
-import { StoreContext } from '../../contexts/TodoContext';
+import { StoreContext } from '../../contexts/StoreContext';
 import cross from '../../images/cross.png';
 import LazyImage from '../products/lazimage/LazyImage';
 import { getSize } from '../utils/helper';
