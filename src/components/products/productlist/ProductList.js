@@ -120,7 +120,7 @@ function ProductList() {
             </div>
           );
         })}
-        {productData.length && (
+        {!productData.length && (
           <p style={{ textAlign: 'center' }}>Nothing to show</p>
         )}
       </div>
