@@ -105,16 +105,14 @@ function ProductList() {
                     </div>
                     <button
                       onClick={() => addToCart(item.id)}
-                      className={
-                        selectionState[item.id] ? 'addcart' : 'addcart hidden'
-                      }
+                      className={selectionState[item.id] ? '' : 'hidden'}
                     >
                       ADD TO CART
                     </button>
                     <span className="sizelist">{SIZE_LABEL}</span>
                   </div>
-                  <span className="listprice">${item.price}</span>
-                  <span className="maxprice">${item.compare_at_price}</span>
+                  <span className="listprice">{item.price}</span>
+                  <span className="maxprice">{item.compare_at_price}</span>
                   <span className="discount">{getDiscount(item)}</span>
                 </div>
               </div>

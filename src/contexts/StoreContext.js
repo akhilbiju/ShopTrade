@@ -15,6 +15,9 @@ const StoreProvider = (props) => {
     return persistData ? JSON.parse(persistData) : initialState;
   });
 
+  /**
+   * Store data in localstorage to persist cart data on refresh
+   */
   useEffect(() => {
     localStorage.setItem(localStorageKey, JSON.stringify(storeState));
   }, [storeState]);

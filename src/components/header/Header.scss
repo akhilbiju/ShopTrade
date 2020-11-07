@@ -24,6 +24,7 @@ header {
       height: 30px;
       margin: 10px;
       border-radius: 5px;
+      animation: fadeIn 0.3s;
     }
   }
   .navlinks {
@@ -96,6 +97,7 @@ header {
     .logo {
       .hamburger {
         display: block;
+        animation: fadeIn 0.3s;
       }
     }
     .controls {
@@ -103,9 +105,7 @@ header {
         display: block;
       }
     }
-    .searchbox-large {
-      display: none;
-    }
+    .searchbox-large,
     .navlinks {
       display: none;
     }

@@ -14,9 +14,9 @@ function Cart() {
   };
   return (
     <div className="cart-container">
-      <h1>
+      <h2>
         My Cart{cartItems.totalItems > 0 ? ` (${cartItems.totalItems})` : ''}
-      </h1>
+      </h2>
       <div className="grid-container">
         <div>Product</div>
         <div>Qty</div>

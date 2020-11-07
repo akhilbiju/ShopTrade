@@ -9,6 +9,16 @@
   display: flex;
   flex-direction: column;
   z-index: 2;
+  &.hidden {
+    visibility: visible;
+    transform: scale(0);
+    transition: transform 0.2s ease-in;
+    transition-delay: 0.1s;
+  }
+  &.active {
+    visibility: visible;
+    animation: fadeIn 0.3s;
+  }
   .header {
     align-self: flex-end;
     margin: 20px;
@@ -43,26 +53,5 @@
         transition: box-shadow 0.3s ease-in-out;
       }
     }
-  }
-}
-
-.hidden {
-  visibility: visible;
-  transform: scale(0);
-  transition: transform 0.2s ease-in;
-  transition-delay: 0.1s;
-}
-
-.active {
-  visibility: visible;
-  animation: fadeIn 0.3s;
-}
-
-@keyframes fadeIn {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
   }
 }

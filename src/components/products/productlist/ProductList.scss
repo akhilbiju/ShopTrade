@@ -68,7 +68,7 @@
             position: absolute;
             bottom: 4px;
           }
-          .addcart {
+          > button {
             padding: 10px;
             margin-top: 22px;
             font-weight: bold;
@@ -93,6 +93,12 @@
         .maxprice {
           text-decoration: line-through;
           margin: 0px 10px;
+        }
+        .listprice,
+        .maxprice {
+          &::before {
+            content: '$';
+          }
         }
         .discount {
           color: red;
