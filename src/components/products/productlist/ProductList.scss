@@ -9,7 +9,6 @@
     box-sizing: border-box;
     cursor: pointer;
     &:hover {
-      -webkit-tap-highlight-color: transparent;
       box-shadow: 0px 0px 1px 0px black;
       .variant {
         visibility: visible !important;
