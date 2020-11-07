@@ -52,7 +52,7 @@ function Cart() {
           );
         })}
       </div>
-      {cartItems.totalAmount > 0 && (
+      {!!cartItems.totalAmount && (
         <div className="total-container">
           <div className="total">
             <span className="label">Total</span>
@@ -61,7 +61,7 @@ function Cart() {
           <button>Checkout</button>
         </div>
       )}
-      {cartItems.totalAmount === 0 && (
+      {!cartItems.totalAmount && (
         <div className="empty">Shopping Cart Empty</div>
       )}
     </div>
