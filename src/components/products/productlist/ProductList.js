@@ -35,9 +35,10 @@ function ProductList() {
    */
   const addToCart = (item) => {
     storeActions.itemAdd({
-      data: selectionState[item].item,
-      optionData: selectionState[item].variant,
+      data: selectionState[item.id].item,
+      optionData: selectionState[item.id].variant,
     });
+    removeSelection(item);
   };
 
   /**
@@ -104,7 +105,7 @@ function ProductList() {
                       </div>
                     </div>
                     <button
-                      onClick={() => addToCart(item.id)}
+                      onClick={() => addToCart(item)}
                       className={selectionState[item.id] ? '' : 'hidden'}
                     >
                       ADD TO CART
@@ -119,7 +120,7 @@ function ProductList() {
             </div>
           );
         })}
-        {productData.length === 0 && (
+        {productData.length && (
           <p style={{ textAlign: 'center' }}>Nothing to show</p>
         )}
       </div>
