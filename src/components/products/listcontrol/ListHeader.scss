@@ -24,10 +24,13 @@
         border-radius: 19px;
         margin: 5px;
         cursor: pointer;
-        &:hover,
-        &.active {
+        &:hover {
           color: black;
           border: 1px solid black;
+        }
+        &.active {
+          color: white;
+          background: black;
         }
       }
     }
