@@ -33,11 +33,28 @@ function Cart() {
                   alt="preview"
                 />
                 <div className="description">
-                  <div>{item.vendor}</div>
-                  <div>Size: {getSize(item.optionType)}</div>
+                  <div className="mobile-container_1">
+                    <div>
+                      {item.vendor}
+                      <div>Size: {getSize(item.optionType)}</div>
+                    </div>
+                    <div className="delete-button_mobile">
+                      <img
+                        onClick={() => deleteItem(item, item.optionType)}
+                        src={cross}
+                        alt="delete"
+                      ></img>
+                    </div>
+                  </div>
+                  <div className="mobile-container_2">
+                    <div>{item.optionType.count}</div>
+                    <div className="item-price_mobile">
+                      ${item.optionType.count * item.price}
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div>{item.optionType.count}</div>
+              <div className="itemcount">{item.optionType.count}</div>
               <div className="delete-button">
                 <img
                   onClick={() => deleteItem(item, item.optionType)}
